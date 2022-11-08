@@ -16,7 +16,5 @@ import java.util.Date;
 public interface PricesRepository extends JpaRepository<Prices, Integer> {
 
     @Query("select p.productId, p.brandId, p.priceList, p.startDate, p.endDate, p.price  from Prices p where p.startDate = ?1 and p.productId = ?2 and p.brandId = ?3")
-    ProductResponseDTO ProductWithPriceAndRate( Date date,
-                                                 Integer productId,
-                                                 Integer brandId);
+    ProductResponseDTO ProductWithPriceAndRate(Date date, Integer productId, Integer brandId);
 }

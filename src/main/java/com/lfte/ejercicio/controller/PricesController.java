@@ -21,11 +21,11 @@ public class PricesController {
 
     @GetMapping("/product")
     public ProductResponseDTO ProductWithPriceAndRate(@RequestParam(name = "date")
-                                                          @DateTimeFormat(pattern="yyyy-MM-dd")
+                                                      @DateTimeFormat(pattern = "yyyy-MM-dd")
                                                       Date date,
-                                                      @RequestParam(name = "productId")  Integer productId,
-                                                      @RequestParam(name = "brandId")  Integer brandId) {
-        return pricesService.ProductWithPriceAndRate(date,productId,brandId);
+                                                      @RequestParam(name = "productId") Integer productId,
+                                                      @RequestParam(name = "brandId") Integer brandId) {
+        return pricesService.ProductWithPriceAndRate(date, productId, brandId);
     }
 
 }

@@ -15,6 +15,7 @@ public class PricesServiceImpl implements PricesService {
 
     @Autowired
     private PricesRepository pricesRepository;
+
     @Override
     public ProductResponseDTO ProductWithPriceAndRate(Date date, Integer productId, Integer brandId) {
         return pricesRepository.ProductWithPriceAndRate(date, productId, brandId);

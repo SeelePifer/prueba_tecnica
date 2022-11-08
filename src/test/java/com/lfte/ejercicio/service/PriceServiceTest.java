@@ -28,7 +28,7 @@ public class PriceServiceTest {
     PricesServiceImpl pricesService;
 
     @Test
-    public void requestAt10AndDay14byBrand1AndProduct35455(){
+    public void requestAt10AndDay14byBrand1AndProduct35455() {
         Prices priceExample = Prices.builder()
                 .brandId(1)
                 .startDate(Date.valueOf(LocalDate.of(20200, 02, 14)))
@@ -51,33 +51,12 @@ public class PriceServiceTest {
 
         Assertions.assertThat(actual).usingRecursiveComparison().isEqualTo(productResponseDTO);
     }
+
     @Test
-    public void requestAt16AndDay14byBrand1AndProduct35455(){
+    public void requestAt16AndDay14byBrand1AndProduct35455() {
         Prices priceExample = Prices.builder()
                 .brandId(1)
-                .startDate(Date.valueOf(LocalDate.of(2022,02, 14)))
-                .productId(35455)
-                .build();
-        ProductResponseDTO productResponseDTO = ProductResponseDTO.builder().
-                productId(priceExample.getProductId())
-                .startDate(priceExample.getStartDate())
-                .brandId(priceExample.getBrandId())
-                .build();
-        when(pricesRepository.ProductWithPriceAndRate(priceExample.getStartDate(),
-                priceExample.getProductId(),
-                priceExample.getBrandId())).thenReturn(productResponseDTO);
-
-        final var actual = pricesService.ProductWithPriceAndRate(priceExample.getStartDate(),
-                priceExample.getProductId(),
-                priceExample.getBrandId());
-
-        Assertions.assertThat(actual).usingRecursiveComparison().isEqualTo(productResponseDTO);
-    }
-    @Test
-    public void requestAt21AndDay14byBrand1AndProduct35455(){
-        Prices priceExample = Prices.builder()
-                .brandId(1)
-                .startDate(Date.valueOf(LocalDate.of(2022,02, 14)))
+                .startDate(Date.valueOf(LocalDate.of(2022, 02, 14)))
                 .productId(35455)
                 .build();
         ProductResponseDTO productResponseDTO = ProductResponseDTO.builder().
@@ -97,10 +76,10 @@ public class PriceServiceTest {
     }
 
     @Test
-    public void requestAt10AndDay15byBrand1AndProduct35455(){
+    public void requestAt21AndDay14byBrand1AndProduct35455() {
         Prices priceExample = Prices.builder()
                 .brandId(1)
-                .startDate(Date.valueOf(LocalDate.of(2022,02, 15)))
+                .startDate(Date.valueOf(LocalDate.of(2022, 02, 14)))
                 .productId(35455)
                 .build();
         ProductResponseDTO productResponseDTO = ProductResponseDTO.builder().
@@ -118,11 +97,35 @@ public class PriceServiceTest {
 
         Assertions.assertThat(actual).usingRecursiveComparison().isEqualTo(productResponseDTO);
     }
+
     @Test
-    public void requestAt21AndDay16byBrand1AndProduct35455(){
+    public void requestAt10AndDay15byBrand1AndProduct35455() {
         Prices priceExample = Prices.builder()
                 .brandId(1)
-                .startDate(Date.valueOf(LocalDate.of(2022,02, 16)))
+                .startDate(Date.valueOf(LocalDate.of(2022, 02, 15)))
+                .productId(35455)
+                .build();
+        ProductResponseDTO productResponseDTO = ProductResponseDTO.builder().
+                productId(priceExample.getProductId())
+                .startDate(priceExample.getStartDate())
+                .brandId(priceExample.getBrandId())
+                .build();
+        when(pricesRepository.ProductWithPriceAndRate(priceExample.getStartDate(),
+                priceExample.getProductId(),
+                priceExample.getBrandId())).thenReturn(productResponseDTO);
+
+        final var actual = pricesService.ProductWithPriceAndRate(priceExample.getStartDate(),
+                priceExample.getProductId(),
+                priceExample.getBrandId());
+
+        Assertions.assertThat(actual).usingRecursiveComparison().isEqualTo(productResponseDTO);
+    }
+
+    @Test
+    public void requestAt21AndDay16byBrand1AndProduct35455() {
+        Prices priceExample = Prices.builder()
+                .brandId(1)
+                .startDate(Date.valueOf(LocalDate.of(2022, 02, 16)))
                 .productId(35455)
                 .build();
         ProductResponseDTO productResponseDTO = ProductResponseDTO.builder().

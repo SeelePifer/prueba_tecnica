@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public interface PricesService {
-    ProductResponseDTO ProductWithPriceAndRate( Date date,
+    ProductResponseDTO ProductWithPriceAndRate(Date date,
                                                Integer productId,
                                                Integer brandId);
 }
